@@ -1,7 +1,7 @@
 # Set your own values here
 $SiteCollectionUrl = "https://artemis3000.sharepoint.com/Sites/portal"
 $BotId = "422a740c-2817-475f-ab79-d99b865d4755"
-$BotDirectLineSecret = "PZVe6HQQaW4.cwA.QCs.n5E0KGtvgVnHf32dhktlRuZqE0JmPMZl6R0ot8ZWyOc"
+//Directline Secret to go here...
 
 Connect-PnPOnline -Url $SiteCollectionUrl -UseWebLogin
 
