@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://artemis3000.sharepoint.com/sites/portal/Lists/SitesRequest/AllItems.aspx",
+      "pageUrl": "https://artemis3000.sharepoint.com/sites/portal",
       "customActions": {
         "34fc95d6-9beb-4099-b50b-4b498edd898c": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "veronicaBot": {
-      "pageUrl": "https://artemis3000.sharepoint.com/sites/portal/Lists/SitesRequest/AllItems.aspx",
+      "pageUrl": "https://artemis3000.sharepoint.com/sites/portal",
       "customActions": {
         "34fc95d6-9beb-4099-b50b-4b498edd898c": {
           "location": "ClientSideExtension.ApplicationCustomizer",

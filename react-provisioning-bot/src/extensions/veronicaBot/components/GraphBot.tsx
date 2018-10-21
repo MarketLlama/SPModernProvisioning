@@ -8,12 +8,13 @@ import * as ReactDOM from 'react-dom';
 import { Chat, DirectLine, DirectLineOptions, ConnectionStatus } from 'botframework-webchat';
 import IGraphBotState from "./IGraphBotState";
 require("botframework-webchat/botchat.css");
-import pnp, { Logger, LogLevel } from "sp-pnp-js";
+import pnp, { Logger, LogLevel, Web } from "sp-pnp-js";
 import { Text } from "@microsoft/sp-core-library";
 import styles from "./GraphBot.module.scss";
 import { SPHttpClient } from "@microsoft/sp-http";
 import IGraphBotSettings from "./IGraphBotSettings";
 import * as strings from "VeronicaBotApplicationCustomizerStrings";
+
 
 class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
 
@@ -109,6 +110,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
       showPanel: true,
     });
 
+
     // Get the conversation id if there is one. Otherwise, a new one will be created
     const conversationId = pnp.storage.local.get(this.CONVERSATION_ID_KEY);
 
@@ -166,7 +168,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         directLineSecret = await this.getTenantPropertyValue(this.ENTITYKEY_DIRECTLINESECRET);
         pnp.storage.local.put(this.ENTITYKEY_DIRECTLINESECRET, directLineSecret, expiration);
       }
-
+     
       return {
         BotId: botId,
         DirectLineSecret: directLineSecret,
@@ -183,8 +185,9 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
    */
   public async getTenantPropertyValue(key: string): Promise<any> {
     // Get settings from tenant properties
+    const w = new Web("https://artemis3000.sharepoint.com/Sites/portal");
     try {
-      pnp.sp.web.getStorageEntity(key).then(r => {
+      w.getStorageEntity(key).then(r => {
         console.log(r);
         return r;
       });
